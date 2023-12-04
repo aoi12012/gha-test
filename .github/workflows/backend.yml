@@ -5,5 +5,5 @@ jobs:
   backend:
     runs-on: ubuntu-latest
 
-    step:
+    steps:
       run: echo "backend"

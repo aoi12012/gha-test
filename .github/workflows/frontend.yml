@@ -5,5 +5,5 @@ jobs:
   frontend:
     runs-on: ubuntu-latest
 
-    step:
+    steps:
       run: echo "frontend"
