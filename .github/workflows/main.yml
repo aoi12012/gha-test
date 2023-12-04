@@ -17,6 +17,7 @@ jobs:
       - uses: dorny/paths-filter@v2
         id: changes
         with: 
+        base: main
           filters: |
             backend:
               - 'backend/**'
