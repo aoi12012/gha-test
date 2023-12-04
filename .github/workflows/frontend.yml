@@ -1,7 +1,7 @@
 on:
   workflow_call
 
-job:
+jobs:
   frontend:
     runs-on: ubuntu-latest
 
