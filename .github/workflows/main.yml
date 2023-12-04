@@ -27,12 +27,12 @@ jobs:
     needs: change
     if: ${{ needs.chage.outputs.backend == 'true' }}
 
-    uses: .github/workflow/backend.yml
+    uses: ./.github/workflows/backend.yml
 
   frontend:
     needs: change
     if: ${{ needs.chage.outputs.frontend == 'true' }}
 
-    uses: .github/workflow/frontsend.yml
+    uses: ./.github/workflows/frontend.yml
 
   
