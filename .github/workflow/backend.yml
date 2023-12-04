@@ -1,0 +1,9 @@
+on:
+  workflow_call
+
+job:
+  backend:
+    runs-on: ubuntu-latest
+
+    step:
+      run: echo "backend"

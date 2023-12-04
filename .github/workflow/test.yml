@@ -1,0 +1,37 @@
+name: test
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  change:
+    runs-on: ubuntu-latest
+
+    outputs:
+      backend: ${{ steps.changes.outputs.backend }}
+      frontend: ${{ steps.changes.outputs.frontend }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/dorny/path-filter@v2
+        id: changes
+        with: 
+          filters: |
+            backend:
+              - 'backend/**'
+            frontend:
+              - 'frontend/**'
+        
+  backend:
+    needs: change
+    if: ${{ needs.chage.outputs.backend == 'true' }}
+
+    uses: .github/workflow/backend.yml
+
+  frontend:
+    needs: change
+    if: ${{ needs.chage.outputs.frontend == 'true' }}
+
+    uses: .github/workflow/frontsend.yml
+
+  
