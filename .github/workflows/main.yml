@@ -18,11 +18,11 @@ jobs:
         id: changes
         with: 
         base: main
-          filters: |
-            backend:
-              - 'backend/**'
-            frontend:
-              - 'frontend/**'
+        filters: |
+          backend:
+            - 'backend/**'
+          frontend:
+            - 'frontend/**'
         
   backend:
     needs: change
